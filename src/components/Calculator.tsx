@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import Button from './Button';
+import MainDisplay from './MainDisplay';
+import OptionalDisplay from './OptionalDisplay';
 
 const Container = styled.div``;
 
@@ -25,57 +27,55 @@ const Grid = styled.div`
     grid-template-columns: repeat(4, 80px);
 `;
 
-const OptionalDisplay = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    height: 6rem;
-    font-size: 1.5rem;
-    color: #fff;
-`;
+const Calculator: React.FC<{}> = () => {
+    const [operations, setOperations] = useState(Array<string>);
+    const [result, setResult] = useState(0);
 
-const MainDisplay = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    height: 5rem;
-    font-size: 4rem;
-    font-weight: 900;
-    color: #fff;
-    border-bottom: 2px solid #7897c5;
-`;
+    const handleClick = (value: string): void => {
+        setOperations([...operations, value]);
+    };
 
-const Calculator: React.FC<{}> = () => (
-    <Container>
-        <Substrate>
-            <Wrapper>
-                <OptionalDisplay>123 + 2323</OptionalDisplay>
-                <MainDisplay>42</MainDisplay>
-                <Grid>
-                    <Button label="C" />
-                    <Button label="√" />
-                    <Button label="%" />
-                    <Button label="/" />
-                    <Button label="7" />
-                    <Button label="8" />
-                    <Button label="9" />
-                    <Button label="x" />
-                    <Button label="4" />
-                    <Button label="5" />
-                    <Button label="6" />
-                    <Button label="-" />
-                    <Button label="1" />
-                    <Button label="2" />
-                    <Button label="3" />
-                    <Button label="+" />
-                    <Button label="00" />
-                    <Button label="0" />
-                    <Button label="," />
-                    <Button label="=" />
-                </Grid>
-            </Wrapper>
-        </Substrate>
-    </Container>
-);
+    const handleClear = () => {
+        setOperations([]);
+    };
+
+    const handleCalculate = () => {
+        console.log(operations);
+        setResult(0);
+    };
+
+    return (
+        <Container>
+            <Substrate>
+                <Wrapper>
+                    <OptionalDisplay operations={operations} />
+                    <MainDisplay result={result} />
+                    <Grid>
+                        <Button label="C" handleClick={handleClear} />
+                        <Button label="√" handleClick={handleClick} />
+                        <Button label="%" handleClick={handleClick} />
+                        <Button label="/" handleClick={handleClick} />
+                        <Button label="7" handleClick={handleClick} />
+                        <Button label="8" handleClick={handleClick} />
+                        <Button label="9" handleClick={handleClick} />
+                        <Button label="x" handleClick={handleClick} />
+                        <Button label="4" handleClick={handleClick} />
+                        <Button label="5" handleClick={handleClick} />
+                        <Button label="6" handleClick={handleClick} />
+                        <Button label="-" handleClick={handleClick} />
+                        <Button label="1" handleClick={handleClick} />
+                        <Button label="2" handleClick={handleClick} />
+                        <Button label="3" handleClick={handleClick} />
+                        <Button label="+" handleClick={handleClick} />
+                        <Button label="00" handleClick={handleClick} />
+                        <Button label="0" handleClick={handleClick} />
+                        <Button label="," handleClick={handleClick} />
+                        <Button label="=" handleClick={handleCalculate} />
+                    </Grid>
+                </Wrapper>
+            </Substrate>
+        </Container>
+    );
+};
 
 export default Calculator;
