@@ -44,9 +44,13 @@ const Calculator: React.FC<{}> = () => {
     };
 
     const handleCalculate = () => {
-        const value = calculate(operations);
-        const res = getFormat(value);
-        setResult(res);
+        try {
+            const value = calculate(operations);
+            const res = getFormat(value);
+            setResult(res);
+        } catch (error) {
+            setResult('Error');
+        }
     };
 
     return (
