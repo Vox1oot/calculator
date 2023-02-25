@@ -10,7 +10,7 @@ const StyledMainDisplay = styled.div`
     align-items: center;
     justify-content: flex-end;
     height: 5rem;
-    font-size: 4rem;
+    font-size: 3.5rem;
     font-weight: 900;
     color: #fff;
     border-bottom: 2px solid #7897c5;

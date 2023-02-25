@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 type Props = {
-    operations: string[]
+    operations: string
 }
 
 const StyledOptionalDisplay = styled.div`
@@ -14,12 +14,8 @@ const StyledOptionalDisplay = styled.div`
     color: #fff;
 `;
 
-const OptionalDisplay: React.FC<Props> = ({ operations }) => {
-    const result = operations.join('');
-
-    return (
-        <StyledOptionalDisplay>{result}</StyledOptionalDisplay>
-    );
-};
+const OptionalDisplay: React.FC<Props> = ({ operations }) => (
+    <StyledOptionalDisplay>{operations}</StyledOptionalDisplay>
+);
 
 export default OptionalDisplay;

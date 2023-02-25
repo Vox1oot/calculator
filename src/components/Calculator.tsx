@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import Button from './Button';
 import MainDisplay from './MainDisplay';
 import OptionalDisplay from './OptionalDisplay';
+import calculate from '../utils/calculate';
+import getFormat from '../utils/getFormat';
 
 const Container = styled.div``;
 
@@ -13,6 +15,7 @@ const Substrate = styled.div`
 `;
 
 const Wrapper = styled.div`
+    max-width: 400px;
     border-radius: 1rem;
     background: linear-gradient(135deg, #285290, #3975ce) ;
     box-shadow: 0px 10px 20px #404040;
@@ -28,20 +31,22 @@ const Grid = styled.div`
 `;
 
 const Calculator: React.FC<{}> = () => {
-    const [operations, setOperations] = useState(Array<string>);
-    const [result, setResult] = useState(0);
+    const [operations, setOperations] = useState('');
+    const [result, setResult] = useState('');
 
     const handleClick = (value: string): void => {
-        setOperations([...operations, value]);
+        setOperations((prev) => prev + value);
     };
 
     const handleClear = () => {
-        setOperations([]);
+        setOperations('');
+        setResult('');
     };
 
     const handleCalculate = () => {
-        console.log(operations);
-        setResult(0);
+        const value = calculate(operations);
+        const res = getFormat(value);
+        setResult(res);
     };
 
     return (
