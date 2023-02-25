@@ -20,12 +20,16 @@ const StyledButton = styled.button`
     }
 `;
 
-const Button: React.FC<Props> = ({ label, handleClick }) => (
-    <StyledButton
-        onClick={() => handleClick(label)}
-    >
-        {label}
-    </StyledButton>
-);
+// eslint-disable-next-line react/display-name
+const Button: React.FC<Props> = React.memo(({ label, handleClick }) => {
+    console.log('button');
+    return (
+        <StyledButton
+            onClick={() => handleClick(label)}
+        >
+            {label}
+        </StyledButton>
+    );
+});
 
 export default Button;

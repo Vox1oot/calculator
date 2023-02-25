@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import styled from 'styled-components';
 import Button from './Button';
 import MainDisplay from './MainDisplay';
@@ -34,16 +34,16 @@ const Calculator: React.FC<{}> = () => {
     const [operations, setOperations] = useState('');
     const [result, setResult] = useState('');
 
-    const handleClick = (value: string): void => {
+    const handleClick = useCallback((value: string): void => {
         setOperations((prev) => prev + value);
-    };
+    }, []);
 
-    const handleClear = () => {
+    const handleClear = useCallback(() => {
         setOperations('');
         setResult('');
-    };
+    }, []);
 
-    const handleCalculate = () => {
+    const handleCalculate = useCallback(() => {
         try {
             const value = calculate(operations);
             const res = getFormat(value);
@@ -51,7 +51,7 @@ const Calculator: React.FC<{}> = () => {
         } catch (error) {
             setResult('Error');
         }
-    };
+    }, [operations]);
 
     return (
         <Container>
