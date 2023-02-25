@@ -34,6 +34,10 @@ const Calculator: React.FC<{}> = () => {
     const [operations, setOperations] = useState('');
     const [result, setResult] = useState('');
 
+    const handleChange = useCallback((value: string): void => {
+        setOperations(value);
+    }, []);
+
     const handleClick = useCallback((value: string): void => {
         setOperations((prev) => prev + value);
     }, []);
@@ -57,7 +61,7 @@ const Calculator: React.FC<{}> = () => {
         <Container>
             <Substrate>
                 <Wrapper>
-                    <OptionalDisplay operations={operations} />
+                    <OptionalDisplay operations={operations} onChange={handleChange} />
                     <MainDisplay result={result} />
                     <Grid>
                         <Button label="C" handleClick={handleClear} />
