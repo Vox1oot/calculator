@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Button from './Button';
 import MainDisplay from './MainDisplay';
 import OptionalDisplay from './OptionalDisplay';
-import calculate from '../utils/calculate';
+import calculate from '../utils/calc';
 import getFormat from '../utils/getFormat';
 
 const Container = styled.div``;
