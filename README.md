@@ -14,3 +14,4 @@ ___
 2. ```$yarn start``` - run dev server
 3. ```$yarn build``` - create build
 4. ```$yarn clear``` - clear build dir
+5. ```$yarn lint``` - start eslint
