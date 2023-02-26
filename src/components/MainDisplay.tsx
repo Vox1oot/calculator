@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 type Props = {
     result: number | string
-}
+};
 
 const StyledMainDisplay = styled.div`
     display: flex;

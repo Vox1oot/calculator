@@ -17,7 +17,7 @@ const Substrate = styled.div`
 const Wrapper = styled.div`
     max-width: 400px;
     border-radius: 1rem;
-    background: linear-gradient(135deg, #285290, #3975ce) ;
+    background: linear-gradient(135deg, #285290, #3975ce);
     box-shadow: 0px 10px 20px #404040;
     padding: 3rem;
 `;
@@ -83,7 +83,11 @@ const Calculator: React.FC<{}> = () => {
                         <Button label="00" handleClick={handleClick} />
                         <Button label="0" handleClick={handleClick} />
                         <Button label="," handleClick={handleClick} />
-                        <Button label="=" handleClick={handleCalculate} />
+                        <Button
+                            label="="
+                            handleClick={handleCalculate}
+                            styles={{ background: '#fff', color: '#4a79be' }}
+                        />
                     </Grid>
                 </Wrapper>
             </Substrate>

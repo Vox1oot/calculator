@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Calculator from './components/Calculator';
 
 const Container = styled.div`
-    background: #fe9999;
+    background: linear-gradient(135deg, #fe9999, #f88484);
     display: flex;
     flex-direction: column;
     height: 100vh;

@@ -2,8 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 
 type Props = {
-    label: string,
+    label: string;
     handleClick: Function;
+    styles?: {};
 };
 
 const StyledButton = styled.button`
@@ -21,15 +22,13 @@ const StyledButton = styled.button`
 `;
 
 // eslint-disable-next-line react/display-name
-const Button: React.FC<Props> = React.memo(({ label, handleClick }) => {
-    console.log('button');
-    return (
-        <StyledButton
-            onClick={() => handleClick(label)}
-        >
-            {label}
-        </StyledButton>
-    );
-});
+const Button: React.FC<Props> = React.memo(({ label, handleClick, styles }) => (
+    <StyledButton
+        style={styles}
+        onClick={() => handleClick(label)}
+    >
+        {label}
+    </StyledButton>
+));
 
 export default Button;

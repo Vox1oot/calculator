@@ -4,19 +4,16 @@ import styled from 'styled-components';
 type Props = {
     operations: string;
     onChange: Function;
-}
+};
 
 const StyledOptionalDisplay = styled.input`
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
+    width: 100%;
     font-size: 1.5rem;
     background: transparent;
-    width: 100%;
+    color: #fff;
     outline: none;
     border: none;
     text-align: right;
-    color: #fff;
 `;
 
 const OptionalDisplay: React.FC<Props> = ({ operations, onChange }) => {
