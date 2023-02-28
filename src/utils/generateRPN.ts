@@ -1,14 +1,5 @@
-type OperationsType = {
-    '+': number;
-    '-': number;
-    '*': number;
-    '/': number;
-    '√': number;
-    '%': number;
-};
-
 const genertaeRPN = (input: string): string[] => {
-    if (input.length == 0) {
+    if (input.length === 0) {
         return [];
     }
 
@@ -21,10 +12,10 @@ const genertaeRPN = (input: string): string[] => {
         '%': 3,
     };
 
-    let output: string[] = [];
-    let stack: string[] = [];
+    const output: string[] = [];
+    const stack: string[] = [];
 
-    const tokens: string[] | null = input.match(/\d+\.{0,1}\d*|[+\-*\/%√]/g); //разбиваем строку на токены
+    const tokens: string[] | null = input.match(/\d+\.{0,1}\d*|[+\-*\\/%√]/g); // разбиваем строку на токены
 
     if (tokens == null) {
         throw new Error('Unexpected operations');
@@ -34,11 +25,11 @@ const genertaeRPN = (input: string): string[] => {
         const token = tokens[i];
 
         if (/\d+/.test(token)) {
-            output.push(token); //int & float кладем в output
+            output.push(token); // int & float кладем в output
         } else {
             while (stack.length > 0 && operators[token] <= operators[stack[stack.length - 1]]) {
                 const operation = stack.pop();
-                if (operation != undefined) {
+                if (operation !== undefined) {
                     output.push(operation);
                 }
             }
@@ -48,7 +39,7 @@ const genertaeRPN = (input: string): string[] => {
 
     while (stack.length > 0) {
         const operation = stack.pop();
-        if (operation != undefined) {
+        if (operation !== undefined) {
             output.push(operation);
         }
     }

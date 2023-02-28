@@ -1,6 +1,7 @@
 env:
   browser: true
   es2021: true
+  jest/globals: true
 extends:
   - airbnb
   - plugin:react/recommended
@@ -23,4 +24,3 @@ rules:
   react/jsx-indent-props: ["error", 4]
   react/function-component-definition: [2, { "namedComponents": "arrow-function" }]
   react/jsx-filename-extension: [2, { 'extensions': ['.js', '.jsx', '.ts', '.tsx'] }]
-  ignorePatterns: ["src/test/*"]

@@ -3,8 +3,9 @@ import styled from 'styled-components';
 import Button from './Button';
 import MainDisplay from './MainDisplay';
 import OptionalDisplay from './OptionalDisplay';
-import calculate from '../utils/calc';
-import getFormat from '../utils/getFormat';
+/* import calculate from '../utils/calc';
+import getFormat from '../utils/getFormat'; */
+import genertaeRPN from '../utils/generateRPN';
 
 const Container = styled.div``;
 
@@ -49,9 +50,11 @@ const Calculator: React.FC<{}> = () => {
 
     const handleCalculate = useCallback(() => {
         try {
-            const value = calculate(operations);
+            const operationsRPN = genertaeRPN(operations);
+            console.log(operationsRPN);
+            /* const value = calculate(operations);
             const res = getFormat(value);
-            setResult(res);
+            setResult(res); */
         } catch (error) {
             setResult('Error');
         }
