@@ -24,7 +24,7 @@ const genertaeRPN = (input: string): string[] => {
     let output: string[] = [];
     let stack: string[] = [];
 
-    const tokens: string[] | null = input.match(/\d\.{0,1}\d*|[+\-*\/%√]/g); //разбиваем строку на токены
+    const tokens: string[] | null = input.match(/\d+\.{0,1}\d*|[+\-*\/%√]/g); //разбиваем строку на токены
 
     if (tokens == null) {
         throw new Error('Unexpected operations');
