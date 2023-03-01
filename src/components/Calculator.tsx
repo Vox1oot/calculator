@@ -23,14 +23,22 @@ const Wrapper = styled.div`
     background: linear-gradient(135deg, #285290, #3975ce);
     box-shadow: 0px 10px 20px #404040;
     padding: 3rem;
+
+    @media (max-width: 420px) {
+        padding: 1.5rem;
+    }
 `;
 
 const Grid = styled.div`
     padding: 20px 5px 0;
     display: grid;
     grid-gap: 1rem;
-    grid-template-rows: repeat(5, 80px);
-    grid-template-columns: repeat(4, 80px);
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+
+    @media (max-width: 420px) {
+        grid-gap: 0.5rem;
+    }
 `;
 
 const Calculator = () => {

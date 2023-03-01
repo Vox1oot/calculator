@@ -14,10 +14,20 @@ const StyledButton = styled.button`
     font-size: 40px;
     font-weight: normal;
     border-radius: 50%;
+    padding: 20px;
 
     &:hover {
         cursor: pointer;
         background-color: #4a79be;
+    }
+
+    @media (max-width: 500px) {
+        font-size: 35px;
+        padding: 10px;
+    }
+
+    @media (max-width: 425px) {
+        padding: 5px;
     }
 `;
 
