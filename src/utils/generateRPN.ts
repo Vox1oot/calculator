@@ -1,9 +1,14 @@
+interface Ioperators {
+    [key: string]: number;
+}
+
 const genertaeRPN = (input: string): string[] => {
     if (input.length === 0) {
         return [];
     }
 
-    const operators: any = {
+    /* Приоритеты операторов */
+    const operators: Ioperators = {
         '+': 1,
         '-': 1,
         '*': 2,
@@ -15,7 +20,7 @@ const genertaeRPN = (input: string): string[] => {
     const output: string[] = [];
     const stack: string[] = [];
 
-    const tokens: string[] | null = input.match(/\d+\.{0,1}\d*|[+\-*\\/%√]/g); // разбиваем строку на токены
+    const tokens: string[] | null = input.match(/\d+\.{0,1}\d*|[+\-*\\/%√]/g); // разбиваем строку на операторы и операнды
 
     if (tokens == null) {
         throw new Error('Unexpected operations');
@@ -25,9 +30,10 @@ const genertaeRPN = (input: string): string[] => {
         const token = tokens[i];
 
         if (/\d+/.test(token)) {
-            output.push(token); // int & float кладем в output
+            output.push(token); // операнды int и float кладем в output
         } else {
-            while (stack.length > 0 && operators[token] <= operators[stack[stack.length - 1]]) {
+            while (stack.length > 0
+                && operators[token] <= operators[stack[stack.length - 1]]) {
                 const operation = stack.pop();
                 if (operation !== undefined) {
                     output.push(operation);

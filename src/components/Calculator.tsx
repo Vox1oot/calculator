@@ -6,6 +6,8 @@ import OptionalDisplay from './OptionalDisplay';
 /* import calculate from '../utils/calc';
 import getFormat from '../utils/getFormat'; */
 import genertaeRPN from '../utils/generateRPN';
+import getNormalize from '../utils/getNormalize';
+import calculate from '../utils/calculate';
 
 const Container = styled.div``;
 
@@ -50,8 +52,9 @@ const Calculator: React.FC<{}> = () => {
 
     const handleCalculate = useCallback(() => {
         try {
-            const operationsRPN = genertaeRPN(operations);
-            console.log(operationsRPN);
+            const normalizeOperations = getNormalize(operations);
+            const operationsRPN = genertaeRPN(normalizeOperations);
+            console.log(calculate(operationsRPN));
             /* const value = calculate(operations);
             const res = getFormat(value);
             setResult(res); */
