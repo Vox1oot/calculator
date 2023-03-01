@@ -14,8 +14,14 @@ describe('Correct algebraic operations', () => {
         expect(calculate(data4)).toBe(50);
     });
 
-    test('empty operations', () => {
+    test('incorrect expressions', () => {
         const data1 = genertaeRPN('');
+        const data2 = genertaeRPN('10+');
+        const data3 = genertaeRPN('9-');
+        const data4 = genertaeRPN('10/0');
         expect(calculate(data1)).toBe(0);
+        expect(calculate(data2)).toBe(10);
+        expect(calculate(data3)).toBe(-9);
+        expect(() => calculate(data4)).toThrow();
     });
 });

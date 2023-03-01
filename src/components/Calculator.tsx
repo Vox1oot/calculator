@@ -33,7 +33,7 @@ const Grid = styled.div`
     grid-template-columns: repeat(4, 80px);
 `;
 
-const Calculator: React.FC<{}> = () => {
+const Calculator = () => {
     const [operations, setOperations] = useState('');
     const [result, setResult] = useState('');
 
@@ -54,7 +54,8 @@ const Calculator: React.FC<{}> = () => {
         try {
             const normalizeOperations = getNormalize(operations);
             const operationsRPN = genertaeRPN(normalizeOperations);
-            console.log(calculate(operationsRPN));
+            const resultValue = calculate(operationsRPN);
+            console.log(resultValue);
             /* const value = calculate(operations);
             const res = getFormat(value);
             setResult(res); */

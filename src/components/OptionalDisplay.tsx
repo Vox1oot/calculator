@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 type Props = {
     operations: string;
-    onChange: Function;
+    onChange: (value: string) => void;
 };
 
 const StyledOptionalDisplay = styled.input`

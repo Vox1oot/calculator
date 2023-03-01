@@ -4,7 +4,7 @@ const calculate = (tokens: string[]): number => {
     const handleToken = (token: string): void => {
         // если число, то кладем в стек
         if (!Number.isNaN(parseFloat(token))) {
-            stack.push(token);
+            stack.push(parseFloat(token));
             return;
         }
 
@@ -55,7 +55,13 @@ const calculate = (tokens: string[]): number => {
         handleToken(token);
     }
 
-    return +((stack.pop() as number).toFixed(3));
+    const resultValue = +((stack.pop() as number).toFixed(3));
+
+    if (!Number.isFinite(resultValue)) {
+        throw new Error('Calculation Error. Not divided by zero');
+    }
+
+    return resultValue;
 };
 
 export default calculate;

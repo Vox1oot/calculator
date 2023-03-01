@@ -3,8 +3,8 @@ import styled from 'styled-components';
 
 type Props = {
     label: string;
-    handleClick: Function;
-    styles?: {};
+    handleClick: (value: string) => void;
+    styles?: { background: string, color: string };
 };
 
 const StyledButton = styled.button`
