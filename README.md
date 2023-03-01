@@ -7,7 +7,7 @@
 ___
 
 ### Tech Stack:
-[![Stack](https://skillicons.dev/icons?i=ts,react,styledcomponents)](https://skillicons.dev)
+[![Stack](https://skillicons.dev/icons?i=ts,react,styledcomponents,jest)](https://skillicons.dev)
 
 #### 🧰 Installation:
 1. ```$yarn install``` - install dependencies
@@ -16,3 +16,5 @@ ___
 4. ```$yarn clear``` - clear build dir
 5. ```$yarn lint``` - start eslint
 6. ```$yarn jest``` - start test
+
+### Go to -> [App](https://calculator-six-omega.vercel.app/)
