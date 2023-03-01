@@ -55,10 +55,12 @@ const Calculator = () => {
             const normalizeOperations = getNormalize(operations);
             const operationsRPN = genertaeRPN(normalizeOperations);
             const resultValue = calculate(operationsRPN);
-            console.log(resultValue);
-            /* const value = calculate(operations);
-            const res = getFormat(value);
-            setResult(res); */
+
+            if (resultValue > 9999999999) {
+                setResult(resultValue.toExponential(2).replace('.', ','));
+            } else {
+                setResult(resultValue.toString().replace('.', ','));
+            }
         } catch (error) {
             setResult('Error');
         }
