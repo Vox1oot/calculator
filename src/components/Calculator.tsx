@@ -3,8 +3,6 @@ import styled from 'styled-components';
 import Button from './Button';
 import MainDisplay from './MainDisplay';
 import OptionalDisplay from './OptionalDisplay';
-/* import calculate from '../utils/calc';
-import getFormat from '../utils/getFormat'; */
 import genertaeRPN from '../utils/generateRPN';
 import getNormalize from '../utils/getNormalize';
 import calculate from '../utils/calculate';
