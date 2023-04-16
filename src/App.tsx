@@ -6,7 +6,7 @@ const Container = styled.div`
     background: linear-gradient(135deg, #fe9999, #f88484);
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    min-height: 100vh;
     justify-content: center;
     align-items: center;
     font-family: Arial, Helvetica, sans-serif;
