@@ -1,4 +1,4 @@
-import getNormalize from '../utils/getNormalize';
+import { getNormalize } from './getNormalize';
 
 test('returns a normalized string', () => {
   expect(getNormalize('12,2x2')).toBe('12.2*2');

@@ -1,4 +1,4 @@
-const calculate = (tokens: string[]): number => {
+export const calculate = (tokens: string[]): number => {
   const stack: Array<number | string> = [0];
 
   const handleToken = (token: string): void => {
@@ -63,5 +63,3 @@ const calculate = (tokens: string[]): number => {
 
   return resultValue;
 };
-
-export default calculate;

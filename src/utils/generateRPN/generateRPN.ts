@@ -10,7 +10,7 @@ const operators: Record<Operator, number> = {
   '%': 3,
 };
 
-const generateRPN = (input: string): string[] => {
+export const generateRPN = (input: string): string[] => {
   if (input.length === 0) {
     return [];
   }
@@ -51,5 +51,3 @@ const generateRPN = (input: string): string[] => {
 
   return output;
 };
-
-export default generateRPN;

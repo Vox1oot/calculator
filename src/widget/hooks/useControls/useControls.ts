@@ -1,8 +1,8 @@
 import { useCallback, useEffect, useState } from 'react';
-import getNormalize from '../../../utils/getNormalize';
-import generateRPN from '../../../utils/generateRPN';
-import calculate from '../../../utils/calculate';
 import { LabelType } from '../../../config';
+import { calculate } from '../../../utils/calculate';
+import { generateRPN } from '../../../utils/generateRPN';
+import { getNormalize } from '../../../utils/getNormalize';
 
 export const useControls = () => {
   const [operations, setOperations] = useState('');

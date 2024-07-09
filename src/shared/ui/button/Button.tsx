@@ -8,5 +8,3 @@ export const Button = ({ className, label, onClick }: IButton) => (
     {label}
   </button>
 );
-
-Button.displayName = 'Button';
