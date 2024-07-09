@@ -1,13 +1,16 @@
-.display-input {
-  color: white;
-  width: 100%;
-  font-size: 25px;
-  font-weight: 500;
-  background: transparent;
-  outline: none;
-  border: none;
-  text-align: right;
-  letter-spacing: 2px;
+.display {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.display-operations {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  font-size: 20px;
+  letter-spacing: 4px;
+  height: 10px;
 }
 
 .display-result {

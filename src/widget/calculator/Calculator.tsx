@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import genertaeRPN from '../../utils/generateRPN';
 import getNormalize from '../../utils/getNormalize';
 import calculate from '../../utils/calculate';
@@ -10,10 +10,6 @@ import { CONFIG_BUTTONS, LabelType } from '../../config';
 export const Calculator = (): JSX.Element => {
   const [operations, setOperations] = useState('');
   const [result, setResult] = useState('');
-
-  const handleChange = useCallback((value: string): void => {
-    setOperations(value);
-  }, []);
 
   const handleClick = useCallback((value: string): void => {
     setOperations((prev) => prev + value);
@@ -51,9 +47,21 @@ export const Calculator = (): JSX.Element => {
     }
   };
 
+  useEffect(() => {
+    const handleEnter = (event: KeyboardEvent) => {
+      if (event.key === 'Enter') {
+        handleCalculate();
+      }
+    };
+
+    document.addEventListener('keydown', handleEnter);
+
+    return () => document.removeEventListener('keydown', handleEnter);
+  }, [handleCalculate]);
+
   return (
     <section className={styles.calculator}>
-      <Display operations={operations} result={result} onChange={handleChange} />
+      <Display operations={operations} result={result} />
 
       <div className={styles['button-panel']}>
         {CONFIG_BUTTONS.map((label) => (
