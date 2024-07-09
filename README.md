@@ -4,17 +4,19 @@
 
 [FIGMA LAYUOT](https://www.figma.com/proto/D5OltlIPKtozs1ib4bBuP4/Untitled?node-id=1%3A4&scaling=min-zoom)
 
-___
+---
 
 ### Tech Stack:
+
 [![Stack](https://skillicons.dev/icons?i=ts,react,styledcomponents,jest)](https://skillicons.dev)
 
 #### 🧰 Installation:
-1. ```$yarn install``` - install dependencies
-2. ```$yarn start``` - run dev server
-3. ```$yarn build``` - create build
-4. ```$yarn clear``` - clear build dir
-5. ```$yarn lint``` - start eslint
-6. ```$yarn jest``` - start test
+
+1. `$make install` - install dependencies
+2. `$make start` - run dev server
+3. `$make build` - create build
+4. `$make clear` - clear build dir
+5. `$make lint` - start eslint
+6. `$make test` - start test
 
 ### Go to -> [App](https://calculator-six-omega.vercel.app/)
