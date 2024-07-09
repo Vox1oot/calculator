@@ -5,8 +5,9 @@ import calculate from '../../utils/calculate';
 import { Button } from '../../shared/ui/button';
 import { Display } from '../../feature/ui/display';
 import styles from './calculator.module.css';
+import { CONFIG_BUTTONS, LabelType } from '../../config';
 
-export const Calculator = () => {
+export const Calculator = (): JSX.Element => {
   const [operations, setOperations] = useState('');
   const [result, setResult] = useState('');
 
@@ -39,34 +40,25 @@ export const Calculator = () => {
     }
   }, [operations]);
 
+  const getHandler = (label: LabelType) => {
+    switch (label) {
+      case 'C':
+        return handleClear;
+      case '=':
+        return handleCalculate;
+      default:
+        return handleClick;
+    }
+  };
+
   return (
     <section className={styles.calculator}>
       <Display operations={operations} result={result} onChange={handleChange} />
+
       <div className={styles['button-panel']}>
-        <Button label="C" handleClick={handleClear} />
-        <Button label="√" handleClick={handleClick} />
-        <Button label="%" handleClick={handleClick} />
-        <Button label="/" handleClick={handleClick} />
-        <Button label="7" handleClick={handleClick} />
-        <Button label="8" handleClick={handleClick} />
-        <Button label="9" handleClick={handleClick} />
-        <Button label="x" handleClick={handleClick} />
-        <Button label="4" handleClick={handleClick} />
-        <Button label="5" handleClick={handleClick} />
-        <Button label="6" handleClick={handleClick} />
-        <Button label="-" handleClick={handleClick} />
-        <Button label="1" handleClick={handleClick} />
-        <Button label="2" handleClick={handleClick} />
-        <Button label="3" handleClick={handleClick} />
-        <Button label="+" handleClick={handleClick} />
-        <Button label="00" handleClick={handleClick} />
-        <Button label="0" handleClick={handleClick} />
-        <Button label="," handleClick={handleClick} />
-        <Button
-          label="="
-          handleClick={handleCalculate}
-          styles={{ background: '#fff', color: '#4a79be' }}
-        />
+        {CONFIG_BUTTONS.map((label) => (
+          <Button key={label} label={label} onClick={getHandler(label)} />
+        ))}
       </div>
 
       <div className={styles['calculator-outline']} />

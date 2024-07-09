@@ -1,7 +1,7 @@
 .calculator {
   position: relative;
   border-radius: 15px;
-  padding: 100px 20px 20px 20px;
+  padding: 100px 50px 20px 50px;
   background: linear-gradient(135deg, var(--primary-dark), var(--primary-light));
   box-shadow: 2px 5px 15px var(--shadow);
 }
@@ -21,7 +21,7 @@
 .button-panel {
   padding: 20px 5px 0;
   display: grid;
-  grid-gap: 1rem;
+  grid-gap: 20px;
   grid-template-rows: repeat(5, 1fr);
   grid-template-columns: repeat(4, 1fr);
 
