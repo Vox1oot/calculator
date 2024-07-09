@@ -1,0 +1,31 @@
+.calculator {
+  position: relative;
+  border-radius: 15px;
+  padding: 100px 20px 20px 20px;
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary-light));
+  box-shadow: 2px 5px 15px var(--shadow);
+}
+
+.calculator-outline {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  background: var(--outline);
+  border-radius: 15px;
+  transform: scale(1.13, 1.1);
+}
+
+.button-panel {
+  padding: 20px 5px 0;
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-rows: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+
+  @media (max-width: 420px) {
+    grid-gap: 0.5rem;
+  }
+}

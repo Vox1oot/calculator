@@ -1,0 +1,21 @@
+.display-input {
+  color: white;
+  width: 100%;
+  font-size: 25px;
+  font-weight: 500;
+  background: transparent;
+  outline: none;
+  border: none;
+  text-align: right;
+  letter-spacing: 2px;
+}
+
+.display-result {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  height: 100px;
+  font-size: 60px;
+  font-weight: 900;
+  border-bottom: 1px solid white;
+}
