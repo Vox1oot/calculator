@@ -20,3 +20,5 @@
 6. `$make test` - start test
 
 ### Go to -> [App](https://calculator-six-omega.vercel.app/)
+
+readme
